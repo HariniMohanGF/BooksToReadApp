@@ -1,24 +1,27 @@
-package com.example.todo.models;
+package com.example.todo.dto;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.*;
-import lombok.*;
+
 @Entity
 
-public class Task {
+public class TaskDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
 
     private Long id;
     private String bookName;
     private boolean completed;
     private String description;
 
-    public Task() {
+    public TaskDTO() {
     }
 
-    public Task(String bookName, Boolean completed, String description) {
+    public TaskDTO(String bookName, Boolean completed, String description) {
         this.bookName = bookName;
         this.completed = completed;
         this.description = description;
